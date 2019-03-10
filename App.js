@@ -7,12 +7,14 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator, createAppContainer, SwitchNavigator } from "react-navigation";
 import Loading from './Loading';
 
 
 const AppNavigator = createStackNavigator({
     Loading: { screen: Loading }
-}, { headerMode: 'none' });
+}, { headerMode: 'none' }, {
+    initialRouteName: 'Loading'
+  });
 
 export default createAppContainer(AppNavigator);

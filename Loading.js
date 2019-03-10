@@ -22,7 +22,7 @@ export default class Loading extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Loading</Text>
+        <Text>Loading ...</Text>
         <ActivityIndicator size="large" />
       </View>
     );
