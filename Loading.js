@@ -10,6 +10,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 
+import firebase from 'react-native-firebase'
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -19,6 +21,13 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class Loading extends Component<Props> {
+
+  componentDidMount() {
+    /*firebase.auth().onAuthStateChanged(user => {
+      this.props.navigation.navigate(user ? 'Main' : 'SignUp')
+    })*/
+  }
+
   render() {
     return (
       <View style={styles.container}>

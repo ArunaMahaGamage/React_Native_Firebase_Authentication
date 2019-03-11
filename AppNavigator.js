@@ -14,8 +14,8 @@ import Login from './Login';
 import Main from './Main';
 
 const AppNavigator = createStackNavigator({
-    SignUp: { screen: SignUp },
     Loading: { screen: Loading },
+    SignUp: { screen: SignUp },
     Login: { screen: Login },
     Main: { screen: Main }
 }, { headerMode: 'none' }, {
