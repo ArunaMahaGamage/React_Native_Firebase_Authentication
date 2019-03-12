@@ -103,7 +103,11 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
+    dexOptions {
+      javaMaxHeapSize "4g"
+   }
     splits {
         abi {
             reset()
@@ -133,6 +137,10 @@ android {
     }
 }
 
+ext {
+    googlePlayVer = "10.2.0"
+}
+
 dependencies {
     implementation project(':react-native-firebase')
     implementation project(':react-native-gesture-handler')
@@ -143,10 +151,19 @@ dependencies {
     //implementation 'com.google.firebase:firebase-auth:11.8.0'
     //compile 'com.google.android.gms:play-services-auth:8.3.0'
 
-    implementation 'com.google.firebase:firebase-auth:11.8.0'
+    implementation "com.google.firebase:firebase-auth:11.8.0"
 
    //implementation "com.google.android.gms:play-services-base:16.0.1"
    implementation "com.google.firebase:firebase-core:16.0.6"
+
+   //compile 'com.google.android.gms:play-services-maps:9.4.0'
+//compile 'com.google.android.gms:play-services-location:9.4.0'
+
+    //compile "com.google.firebase:firebase-core:${googlePlayVer}"
+    //compile "com.google.firebase:firebase-auth:${googlePlayVer}"
+    //compile "com.google.firebase:firebase-database:${googlePlayVer}"
+    //compile "com.google.android.gms:play-services-base:10.2.1"
+    compile 'com.android.support:multidex:1.0.3'
 }
 apply plugin: 'com.google.gms.google-services'
 
